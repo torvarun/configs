@@ -92,6 +92,7 @@ fi
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  Z
 )
 
 source $ZSH/oh-my-zsh.sh
