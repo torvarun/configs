@@ -1,13 +1,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintainer: 
-"       Amir Salihefendic — @amix3k
-"
-" Awesome_version:
-"       Get this config, nice color schemes and lots of plugins!
-"
-"       Install the awesome version from:
-"
-"           https://github.com/amix/vimrc
+"       Varun Venkataramanan — @torvarun
 "
 " Sections:
 "    -> General
@@ -49,6 +42,9 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 let g:airline_powerline_fonts = 1
 let g:AirlineTheme = "tender"
+
+" ctrl-p
+Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -418,4 +414,6 @@ set number
 " Remove netrw banner and change format
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
+
+set nu rnu
 

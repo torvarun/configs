@@ -10,6 +10,21 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
+# Prompt to show Spotify status on powerline
+# Taken From: https://github.com/bhilburn/powerlevel9k/wiki/Show-Off-Your-Config#semartins-configuration
+prompt_zsh_showStatus () {
+	local color='%F{white}'
+  state=`osascript -e 'tell application "Spotify" to player state as string'`;
+  if [ $state = "playing" ]; then
+    artist=`osascript -e 'tell application "Spotify" to artist of current track as string'`;
+    track=`osascript -e 'tell application "Spotify" to name of current track as string'`;
+
+      echo -n "%{$color%}♬  $artist - $track " ;
+
+  fi
+}
+
+
 POWERLEVEL9K_MODE="nerdfont-complete"      
 POWERLEVEL9K_DISABLE_RPROMPT=true
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
@@ -20,6 +35,8 @@ if [ $(hostname) = "snoopy" ]; then
 else
     POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
 fi
+# Don't use the spotify prompt because it is very slow
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(zsh_showStatus) 
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -108,6 +125,7 @@ export PATH="/usr/local/opt/gettext/bin:$PATH"
 # rbenv
 eval "$(rbenv init -)"
 
+source ~/.shrc_general # General functions
 alias zshrc="vim ~/.zshrc && source ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
 alias icons.show="defaults write com.apple.finder CreateDesktop true"
@@ -117,8 +135,11 @@ alias trash.empty_all="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash;"
 alias stream.nhl="open /Applications/LazyMan.jar"
 alias update.all="sh ~/Documents/scripts/update.sh"
 alias config='/usr/bin/git --git-dir=/Users/torvarun/.cfg/ --work-tree=/Users/torvarun'
+alias cls='colorls'
+alias ct='colorls --tree'
 
-# Function to serve the current dir using ruby
+
+# Function to serve the current dir using ruby with CORS enabled
 # Serves at localhost:3000 by default
 function serve {
   port="${1:-3000}"
@@ -126,35 +147,12 @@ function serve {
   ruby -run -e httpd . -p $port 
 }
 
-# # Extract many types of compressed packages
-# # Credit: http://nparikh.org/notes/zshrc.txt
-function extract() {
-  if [ -f "$1" ]; then
-    case "$1" in
-      *.tar.bz2)  tar -jxvf "$1"                        ;;
-      *.tar.gz)   tar -zxvf "$1"                        ;;
-      *.bz2)      bunzip2 "$1"                          ;;
-      *.dmg)      hdiutil mount "$1"                    ;;
-      *.gz)       gunzip "$1"                           ;;
-      *.tar)      tar -xvf "$1"                         ;;
-      *.tbz2)     tar -jxvf "$1"                        ;;
-      *.tgz)      tar -zxvf "$1"                        ;;
-      *.zip)      unzip "$1"                            ;;
-      *.ZIP)      unzip "$1"                            ;;
-      *.pax)      cat "$1" | pax -r                     ;;
-      *.pax.Z)    uncompress "$1" --stdout | pax -r     ;;
-      *.Z)        uncompress "$1"                       ;;
-      *) echo "'$1' cannot be extracted/mounted via extract()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file to extract"
-  fi
-}
 
 # Global Variables
-export ANDROID_HOME=/Volumes/woodstock/Library/Android/sdk
+export ANDROID_HOME=~/Library/Android/sdk
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export PATH="/usr/local/opt/ncurses/bin:$PATH"
 export GOOGLE_APPLICATION_CREDENTIALS="/Users/torvarun/googlepi-b51dc8a04e77.json"
-
 export PATH="/usr/local/sbin:$PATH"
+export VISUAL=vim # editor for crontab
+source /Users/torvarun/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/colorls-1.1.1/lib/tab_complete.sh # colorls
