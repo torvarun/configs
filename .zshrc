@@ -2,9 +2,9 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/torvarun/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -92,7 +92,7 @@ fi
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  Z
+  zsh-z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -124,20 +124,12 @@ export PATH="/usr/local/opt/gettext/bin:$PATH"
 # For a full list of active aliases, run `alias`.
 
 # rbenv
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
 source ~/.shrc_general # General functions
 alias zshrc="vim ~/.zshrc && source ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
-alias icons.show="defaults write com.apple.finder CreateDesktop true"
-alias icons.hide="defaults write com.apple.finder CreateDesktop false"
-alias trash.empty="sudo rm -rfv ~/.Trash;"
-alias trash.empty_all="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash;"
-alias stream.nhl="open /Applications/LazyMan.jar"
-alias update.all="sh ~/Documents/scripts/update.sh"
-alias config='/usr/bin/git --git-dir=/Users/torvarun/.cfg/ --work-tree=/Users/torvarun'
-alias cls='colorls'
-alias ct='colorls --tree'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 
 # Function to serve the current dir using ruby with CORS enabled
@@ -150,10 +142,4 @@ function serve {
 
 
 # Global Variables
-export ANDROID_HOME=~/Library/Android/sdk
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-export PATH="/usr/local/opt/ncurses/bin:$PATH"
-export GOOGLE_APPLICATION_CREDENTIALS="/Users/torvarun/googlepi-b51dc8a04e77.json"
-export PATH="/usr/local/sbin:$PATH"
 export VISUAL=vim # editor for crontab
-source /Users/torvarun/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/colorls-1.1.1/lib/tab_complete.sh # colorls
