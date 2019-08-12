@@ -40,3 +40,5 @@ function mkcd() {
     cd $1
 }
 
+alias i3rc="vim ~/.config/i3/config"
+
