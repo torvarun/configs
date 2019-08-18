@@ -173,6 +173,10 @@ bar {
 
 bindsym $mod+shift+x exec i3lock
 
+# Brightness controls
+bindsym XF86MonBrightnessUp exec light -A 5
+bindsym XF86MonBrightnessDown exec light -U 5
+
 # Media Controls
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
@@ -185,6 +189,6 @@ gaps outer 0
 
 # startup commands
 exec_always feh -x --bg-scale ~/wallpapers/forest.jpg
-exec spotify
+# exec spotify
 exec termite
-exec firefox
+# exec firefox
