@@ -106,17 +106,13 @@ export PATH="/usr/local/opt/gettext/bin:$PATH"
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
- if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
- else
-   export EDITOR='mvim'
- fi
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -127,6 +123,7 @@ export PATH="/usr/local/opt/gettext/bin:$PATH"
 eval "$(rbenv init -)"
 
 source ~/.shrc_general # General functions
+
 alias zshrc="vim ~/.zshrc && source ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
 alias icons.show="defaults write com.apple.finder CreateDesktop true"
@@ -138,6 +135,12 @@ alias update.all="sh ~/Documents/scripts/update.sh"
 alias config='/usr/bin/git --git-dir=/Users/torvarun/.cfg/ --work-tree=/Users/torvarun'
 alias cls='colorls'
 alias ct='colorls --tree'
+
+alias jobs='jobs -p'
+
+# Android goodies
+alias logcat="adb logcat -c && adb logcat"
+alias screenshot="adb shell screencap /sdcard/screen.png && adb pull /sdcard/screen.png && adb shell rm /sdcard/screen.png"
 
 
 # Function to serve the current dir using ruby with CORS enabled
@@ -157,3 +160,6 @@ export GOOGLE_APPLICATION_CREDENTIALS="/Users/torvarun/googlepi-b51dc8a04e77.jso
 export PATH="/usr/local/sbin:$PATH"
 export VISUAL=vim # editor for crontab
 source /Users/torvarun/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/colorls-1.1.1/lib/tab_complete.sh # colorls
+
+# --- CS 246
+alias uwl="ssh v5venkat@linux.student.cs.uwaterloo.ca"
