@@ -109,7 +109,7 @@ export PATH="/usr/local/opt/gettext/bin:$PATH"
  if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='vim'
  else
-   export EDITOR='mvim'
+   export EDITOR='vim'
  fi
 
 # Compilation flags
