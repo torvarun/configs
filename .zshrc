@@ -140,6 +140,9 @@ function serve {
   ruby -run -e httpd . -p $port 
 }
 
+# autoscript
+PATH=$HOME/bin:$PATH
+alias ascript="autoscript"
 
 # Global Variables
 export VISUAL=vim # editor for crontab
