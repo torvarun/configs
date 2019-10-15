@@ -171,7 +171,7 @@ bar {
         status_command i3status
 }
 
-bindsym $mod+shift+x exec i3lock
+bindsym $mod+shift+x exec betterlockscreen --lock blur -t "schroeder | Arch Linux"
 
 # Brightness controls
 bindsym XF86MonBrightnessUp exec light -A 5
