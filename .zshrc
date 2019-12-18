@@ -141,8 +141,12 @@ function serve {
 }
 
 # autoscript
-PATH=$HOME/bin:$PATH
+PATH=$HOME/scripts:$PATH
 alias ascript="autoscript"
+
+alias bt="bluetoothctl"
+
+alias uwl="ssh v5venkat@linux.student.cs.uwaterloo.ca"
 
 # Global Variables
 export VISUAL=vim # editor for crontab

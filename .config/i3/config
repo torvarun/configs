@@ -35,6 +35,9 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
+# --- exec startup things ---
+exec "light -S 10" # lower brightness
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -45,11 +48,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec rofi -show run -theme Monokai
+bindsym $mod+space exec "rofi -combi-modi window\,run -show combi -modi combi -theme Monokai"
 
 # change focus
 bindsym $mod+h focus left
@@ -81,7 +81,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+Shift+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -91,10 +91,10 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1 music"
-set $ws2 "2 console"
-set $ws3 "3 web"
-set $ws4 "4"
+set $ws1 "1 productivity"
+set $ws2 "2 music"
+set $ws3 "3 console"
+set $ws4 "4 web"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -115,9 +115,11 @@ bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
 # program assignments
-assign [class="Spotify"] $ws1
-assign [class="Termite"] $ws2
-assign [class="firefox"] $ws3
+assign [class="Notion"] $ws1
+assign [class="Thunderbird"] $ws1
+assign [class="Spotify"] $ws2
+assign [class="Termite"] $ws3
+assign [class="firefox"] $ws4
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
