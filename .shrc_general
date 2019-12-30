@@ -40,3 +40,13 @@ function mkcd() {
     cd $1
 }
 
+function sdir() {
+    grep -ril $1 .
+}
+
+function ytdl() {
+    # Function to download a youtube link into an mp3 with a given filename. 
+    # Places file into ~/Music/tunes (which is autoindexed by spotify)
+    fname="/Users/torvarun/Music/tunes/${1}.%(ext)s"
+    youtube-dl --extract-audio --audio-format mp3 --prefer-ffmpeg --output $fname $2
+}
