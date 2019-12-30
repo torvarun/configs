@@ -46,6 +46,17 @@ let g:AirlineTheme = "tender"
 " ctrl-p
 Plugin 'ctrlpvim/ctrlp.vim'
 
+" limelight
+Plugin 'junegunn/limelight.vim'
+
+" goyo
+Plugin 'junegunn/goyo.vim'
+
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
+
 call vundle#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -76,7 +87,7 @@ command W w !sudo tee % > /dev/null
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set 7 lines to the cursor - when moving vertically using j/k
-set so=7
+set so=10
 
 " Avoid garbled characters in Chinese language windows OS
 let $LANG='en' 
@@ -404,6 +415,22 @@ function! VisualSelection(direction, extra_filter) range
     let @" = l:saved_reg
 endfunction
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Writing Mode
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! Scribe()
+    if !exists('b:is_scribe')
+        let b:is_scribe=1
+        nnoremap k gk
+        nnoremap j gj
+        Goyo
+    else
+        Goyo!
+        nnoremap k k
+        nnoremap j j
+        unlet b:is_scribe
+    endif
+endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Additional Configs
@@ -411,9 +438,11 @@ endfunction
 set mouse=a
 set number
 
-" Remove netrw banner and change format
+" Remove netrw banner and change dir format
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
+" line numbers in netrw
+let g:netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
 
 set nu rnu
 
