@@ -8,6 +8,7 @@ alias up5='cd ../../../../../'
 alias up6='cd ../../../../../../'
 alias up7='cd ../../../../../../../'
 
+alias ls='ls'
 alias la='ls -a'
 
 # Extract many types of compressed packages
@@ -49,4 +50,9 @@ function ytdl() {
     # Places file into ~/Music/tunes (which is autoindexed by spotify)
     fname="/Users/torvarun/Music/tunes/${1}.%(ext)s"
     youtube-dl --extract-audio --audio-format mp3 --prefer-ffmpeg --output $fname $2
+}
+
+function mkscript() {
+    echo '#!/bin/bash' > $1
+    chmod +x $1
 }

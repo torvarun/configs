@@ -432,6 +432,9 @@ function! Scribe()
     endif
 endfunction
 
+" Map the function call to ctrl + s
+nnoremap <C-s> :call Scribe()<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Additional Configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
