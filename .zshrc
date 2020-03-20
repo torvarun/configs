@@ -146,7 +146,7 @@ alias ascript="autoscript"
 
 alias bt="bluetoothctl"
 
-alias uwl="ssh v5venkat@linux.student.cs.uwaterloo.ca"
+alias uwl="ssh cs_uw"
 
 # Global Variables
 export VISUAL=vim # editor for crontab
