@@ -47,10 +47,6 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run -theme Monokai
-bindsym $mod+space exec "rofi -combi-modi window\,run -show combi -modi combi -theme Monokai"
-
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -179,6 +175,17 @@ bindsym XF86MonBrightnessDown exec light -U 5
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+# Utilities
+
+# Program run/switch
+bindsym $mod+space exec "rofi -combi-modi window\,run -show combi -modi combi -theme Monokai"
+
+# fuzzy file opener
+bindsym $mod+p exec "find ~ /mnt/woodstock | sed -e \\"s/'/\\\'/g\\" -e 's/\ /\\ /g' | sort -f | rofi -dmenu -theme Monokai | xargs -r xdg-open"
+
+# Google search
+bindsym $mod+d exec "echo \\"\\" | rofi -dmenu -p \\"Google\\" | xargs -I{} xdg-open https://www.google.ca/search?q={} && wmctrl -a Firefox"
 
 # gaps
 for_window [class="^.*"] border pixel 1 # remove strip on background at top
