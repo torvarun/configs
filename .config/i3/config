@@ -117,7 +117,9 @@ bindsym $mod+0 workspace $ws10
 # program assignments
 assign [class="Notion"] $ws1
 assign [class="Thunderbird"] $ws1
-assign [class="Spotify"] $ws2
+# assign [class="Spotify"] $ws2
+# Hack since the above doesn't work
+for_window [class="Spotify"] move to workspace $ws2
 assign [class="Termite"] $ws3
 assign [class="firefox"] $ws4
 
@@ -191,4 +193,3 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 exec termite
 exec firefox
-exec spotify
