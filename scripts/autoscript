@@ -2,13 +2,17 @@
 
 # Script to automate the creation of scripts
 
-SCRIPT_DIR="$HOME/scripts"
-SCRIPT_FILE="$SCRIPT_DIR/$1"
-
-if [[ -f $SCRIPT_FILE ]]; then
-    vim $SCRIPT_FILE
+if [[ ! -z "$1" ]]; then
+    SCRIPT_DIR="$HOME/scripts"
+    SCRIPT_FILE="$SCRIPT_DIR/$1"
+    
+    if [[ -f $SCRIPT_FILE ]]; then
+        vim $SCRIPT_FILE
+    else
+        echo '#!/bin/bash' > $SCRIPT_FILE
+        chmod +x $SCRIPT_FILE
+        vim $SCRIPT_FILE
+    fi
 else
-    echo '#!/bin/bash' > $SCRIPT_FILE
-    chmod +x $SCRIPT_FILE
-    vim $SCRIPT_FILE
+    vim $HOME/scripts
 fi
