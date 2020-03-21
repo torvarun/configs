@@ -148,5 +148,10 @@ alias bt="bluetoothctl"
 
 alias uwl="ssh cs_uw"
 
+# useful aliases
+alias open="xdg-open"
+alias pbcopy="xclip"
+alias pbpaste="xclip -o"
+
 # Global Variables
 export VISUAL=vim # editor for crontab
