@@ -11,7 +11,7 @@
 
 set $mod Mod4
 
-set $term termite
+set $term st
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -45,7 +45,7 @@ for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 625 450
 for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] border pixel 5
-exec --no-startup-id $term --name=dropdown 
+exec --no-startup-id $term -n dropdown 
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -79,12 +79,15 @@ bindsym $mod+v split v
 bindsym $mod+z fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+bindsym $mod+q layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
+
+# screenshot
+bindsym $mod+s exec "maim -s | xclip -selection clipboard -t image/png"
 
 # change focus between tiling / floating windows
 # bindsym $mod+Shift+space focus mode_toggle
@@ -126,7 +129,7 @@ assign [class="Thunderbird"] $ws1
 # assign [class="Spotify"] $ws2
 # Hack since the above doesn't work
 for_window [class="Spotify"] move to workspace $ws2
-assign [class="Termite"] $ws3
+assign [class="St"] $ws3
 assign [class="firefox"] $ws4
 
 # move focused container to workspace
@@ -210,5 +213,5 @@ gaps outer 0
 exec --no-startup-id betterlockscreen -w dim
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-exec termite
+exec $term
 exec firefox
