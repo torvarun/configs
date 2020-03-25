@@ -8,3 +8,4 @@ map R reload
 map m zoom in
 map n zoom out
 map r recolor
+map P print
