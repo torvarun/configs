@@ -17,15 +17,13 @@
 ;==========================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #222
+background = ${xrdb:color0:#282828}
 background-alt = #444
-;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
+foreground = ${xrdb:color7:#eeeeee}
 foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+primary = ${xrdb:color4:#b3deef}
+secondary = ${xrdb:color2:#f43753}
+alert = ${xrdb:color5:#d3b987}
 
 [bar/torvarun]
 monitor = ${env:MONITOR:HDMI-1}
@@ -55,9 +53,9 @@ font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
-modules-left = i3
-modules-center = mpd
-modules-right = filesystem xbacklight alsa pulseaudio wlan eth battery date 
+modules-left = i3 
+modules-center = 
+modules-right = spotify pulseaudio wlan bluetooth battery date 
 
 tray-position = right
 tray-padding = 2
@@ -71,8 +69,8 @@ tray-padding = 2
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
 
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -158,6 +156,17 @@ icon-next = 
 label-song-maxlen = 25
 label-song-ellipsis = true
 
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = ""
+format = <label>
+exec = python ~/.config/polybar/scripts/spotify_status.py -f '{artist} - {song}'
+format-underline = ${colors.primary}
+click-left = playerctl play-pause
+click-right = playerctl next
+double-click-left = playerctl previous
+
 [module/xbacklight]
 type = internal/xbacklight
 
@@ -217,6 +226,12 @@ ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/bluetooth]
+type = custom/script
+exec = bt-rofi --status
+interval = 1
+click-left = bt-rofi &
 
 [module/eth]
 type = internal/network
