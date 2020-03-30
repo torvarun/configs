@@ -178,7 +178,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym $mod+shift+x exec betterlockscreen --lock blur -t "schroeder | arch linux"
+bindsym $mod+shift+x exec betterlockscreen --lock dimblur -t "schroeder | arch linux"
 
 bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center 
 
@@ -204,6 +204,9 @@ bindsym $mod+d exec "echo \\"\\" | rofi -dmenu -p \\"Google\\" | xargs -I{} xdg-
 
 # bluetoothctl
 bindsym $mod+shift+b exec "~/scripts/bt-rofi"
+
+# emoji + unicode picker
+bindsym $mod+i exec "~/scripts/emoji-rofi"
 
 # gaps
 for_window [class="^.*"] border pixel 1 # remove strip on background at top
