@@ -153,5 +153,11 @@ alias open="xdg-open"
 alias pbcopy="xclip"
 alias pbpaste="xclip -o"
 
+# mounting drives with user permission
+function mountwood {
+    sudo mkdir /mnt/woodstock
+    sudo mount -t vfat -ouser,gid=1000,umask=0007 $1 /mnt/woodstock
+}
+
 # Global Variables
 export VISUAL=vim # editor for crontab
