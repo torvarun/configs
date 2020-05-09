@@ -7,35 +7,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
-
-# Prompt to show Spotify status on powerline
-# Taken From: https://github.com/bhilburn/powerlevel9k/wiki/Show-Off-Your-Config#semartins-configuration
-prompt_zsh_showStatus () {
-	local color='%F{white}'
-  state=`osascript -e 'tell application "Spotify" to player state as string'`;
-  if [ $state = "playing" ]; then
-    artist=`osascript -e 'tell application "Spotify" to artist of current track as string'`;
-    track=`osascript -e 'tell application "Spotify" to name of current track as string'`;
-
-      echo -n "%{$color%}♬  $artist - $track " ;
-
-  fi
-}
-
-
-POWERLEVEL9K_MODE="nerdfont-complete"      
-POWERLEVEL9K_DISABLE_RPROMPT=true
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="▶ "
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
-if [ $(hostname) = "snoopy" ]; then
-    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-else
-    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
-fi
-# Don't use the spotify prompt because it is very slow
-#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(zsh_showStatus) 
+ZSH_THEME="common"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
