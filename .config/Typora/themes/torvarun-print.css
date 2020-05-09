@@ -1,23 +1,23 @@
 @font-face {
-  font-family: "iA Writer Duo S";
+  font-family: "SF Pro Display";
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
-  font-family: "iA Writer Duo S";
+  font-family: "SF Pro Display";
   font-style: italic;
   font-weight: normal;
 }
 
 @font-face {
-  font-family: "iA Writer Duo S";
+  font-family: "SF Pro Display";
   font-style: normal;
   font-weight: bold;
 }
 
 @font-face {
-  font-family: "iA Writer Duo S";
+  font-family: "SF Pro Display";
   font-style: italic;
   font-weight: bold;
 }
@@ -86,11 +86,11 @@
 }
 
 html, body {
-  font-family: 'iA Writer Duo S', 'Lato', sans-serif;
+  font-family: 'SF Pro Display', 'Lato', sans-serif;
 }
 
 body {
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -705,7 +705,7 @@ td, th {
 
 #typora-sidebar .file-list-item-summary,
 #typora-sidebar .ty-search-item-line {
-  font-family: 'iA Writer Duo S', 'Lato', sans-serif;
+  font-family: 'SF Pro Display', 'Lato', sans-serif;
 }
 
 #typora-sidebar .ty-file-search-match-text,
