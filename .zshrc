@@ -133,3 +133,4 @@ function mountwood {
 
 # Global Variables
 export VISUAL=vim # editor for crontab
+export TERM=xterm-256color
