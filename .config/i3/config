@@ -129,8 +129,8 @@ assign [class="Thunderbird"] $ws1
 # assign [class="Spotify"] $ws2
 # Hack since the above doesn't work
 for_window [class="Spotify"] move to workspace $ws2
-assign [class="St"] $ws3
-assign [class="firefox"] $ws4
+#assign [class="St"] $ws3
+#assign [class="firefox"] $ws4
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -193,11 +193,14 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Utilities
 
+# cmd+tab functionality
+bindsym $mod+Tab workspace back_and_forth
+
 # Program run/switch
 bindsym $mod+space exec "rofi -combi-modi window\,run -show combi -modi combi"
 
 # fuzzy file opener
-bindsym $mod+p exec "find ~ /mnt/woodstock | sed -e \\"s/'/\\\'/g\\" -e 's/\ /\\ /g' | sort -f | rofi -dmenu | xargs -r xdg-open"
+#bindsym $mod+p exec "find ~ /mnt/woodstock | sed -e \\"s/'/\\\'/g\\" -e 's/\ /\\ /g' | sort -f | rofi -dmenu | xargs -r mimeo"
 
 # Google search
 bindsym $mod+d exec "echo \\"\\" | rofi -dmenu -p \\"Google\\" | xargs -I{} xdg-open https://www.google.ca/search?q={} && wmctrl -a Firefox"
@@ -216,8 +219,9 @@ gaps outer 0
 # startup commands
 
 # set desktop background with custom effect
+exec --no-startup-id "feh --bg-fill ~/Documents/photos/snoopy-writing.jpg"
 exec --no-startup-id betterlockscreen -w dim
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 exec $term
-exec firefox
+#exec firefox
