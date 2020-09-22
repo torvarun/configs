@@ -1,0 +1,10 @@
+#!/bin/bash
+
+LAYOUT_PATH=~/.screenlayout/
+
+LAYOUT=$(ls "$LAYOUT_PATH" | rofi -dmenu)
+
+$LAYOUT_PATH$LAYOUT
+
+# restart i3 in-place preserving layout
+i3-msg restart
