@@ -121,9 +121,11 @@ alias bt="bluetoothctl"
 alias uwl="ssh cs_uw"
 
 # useful aliases
-alias open="xdg-open"
+alias open="mimeo"
 alias pbcopy="xclip"
 alias pbpaste="xclip -o"
+alias ytop="ytop -b"
+alias as="autoscript"
 
 # mounting drives with user permission
 function mountwood {
