@@ -1,0 +1,9 @@
+#!/bin/bash
+
+CONFIG_PATH=~/.keyconfig/
+
+CONFIG=$(ls "$CONFIG_PATH" | rofi -dmenu)
+
+if [ -n "$CONFIG" ]; then
+    xmodmap $CONFIG_PATH$CONFIG
+fi

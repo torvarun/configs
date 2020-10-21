@@ -204,6 +204,9 @@ bindsym $mod+shift+b exec "~/scripts/bt-rofi"
 # emoji + unicode picker
 bindsym $mod+i exec "~/scripts/emoji-rofi"
 
+# keyboard
+bindsym $mod+Shift+v exec "~/scripts/keyboard"
+
 # gaps
 for_window [class="^.*"] border pixel 1 # remove strip on background at top
 gaps inner 10 
