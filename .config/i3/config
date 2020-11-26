@@ -46,6 +46,16 @@ for_window [instance="dropdown"] resize set 625 450
 for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] border pixel 5
 exec --no-startup-id $term -n dropdown 
+bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center 
+
+# dropdown pavucontrol
+for_window [instance="pavucontrol"] floating enable
+for_window [instance="pavucontrol"] resize set 625 450
+for_window [instance="pavucontrol"] move scratchpad
+for_window [instance="pavucontrol"] border pixel 5
+exec --no-startup-id pavucontrol
+bindsym $mod+p [instance="pavucontrol"] scratchpad show; [instance="pavucontrol"] move position center 
+
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -172,8 +182,6 @@ bindsym $mod+r mode "resize"
 bindsym $mod+shift+x exec betterlockscreen --lock dimblur -t "schroeder | arch linux"
 bindsym $mod+Escape exec betterlockscreen --suspend dimblur -t "schroeder | arch linux"
 
-
-bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center 
 
 # Brightness controls
 bindsym XF86MonBrightnessUp exec light -A 5
