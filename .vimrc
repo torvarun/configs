@@ -54,8 +54,15 @@ Plugin 'junegunn/goyo.vim'
 
 " vim-tex
 Plugin 'lervag/vimtex'
+
 let g:tex_flavor = 'latex'
 
+" ALE
+Plugin 'dense-analysis/ale'
+let g:airline#extensions#ale#enabled = 1
+
+" polyglot
+Plugin 'sheerun/vim-polyglot'
 
 " Color name (:help cterm-colors) or ANSI code
 let g:limelight_conceal_ctermfg = 'gray'
