@@ -5,6 +5,8 @@
     brl = branch -l
     c = commit
     cm = commit -m
+    ss = stash save
+    sp = stash pop
 [user]
 	email = torvarun@gmail.com
 	name = torvarun
