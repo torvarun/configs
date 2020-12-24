@@ -5,5 +5,5 @@
 count=$(checkupdates | wc -l)
 
 if [ $count -ne 0 ]; then
-    $count
+    echo $count
 fi
