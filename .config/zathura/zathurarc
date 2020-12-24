@@ -4,7 +4,7 @@ set statusbar-v-padding 0
 set page-padding 1
 map i scroll half-up
 map u scroll half-down
-map R reload
+map R rotate
 map m zoom in
 map n zoom out
 map r recolor
