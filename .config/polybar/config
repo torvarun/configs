@@ -231,6 +231,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 [module/bluetooth]
 type = custom/script
 exec = ~/scripts/bt-rofi --status
+format-underline = ${colors.primary}
 interval = 1
 click-left = bt-rofi &
 
@@ -326,6 +327,7 @@ type = internal/battery
 battery = BAT0
 adapter = ADP1
 full-at = 98
+poll-interval = 5
 
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
@@ -424,6 +426,6 @@ margin-bottom = 5
 [module/updates]
 type = custom/script
 exec = ~/scripts/numupdates
-interval = 300
+interval = 25
 
 ; vim:ft=dosini
