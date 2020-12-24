@@ -122,15 +122,15 @@ alias uwl="ssh cs_uw"
 
 # useful aliases
 alias open="mimeo"
-alias pbcopy="xclip"
-alias pbpaste="xclip -o"
+alias pbcopy="xclip -selection c"
+alias pbpaste="xclip -selection c -o"
 alias ytop="ytop -b"
 alias as="autoscript"
 
 # mounting drives with user permission
 function mountwood {
     sudo mkdir /mnt/woodstock
-    sudo mount -t vfat -ouser,gid=1000,umask=0007 $1 /mnt/woodstock
+    sudo mount $1 /mnt/woodstock -o umask=000
 }
 
 # Global Variables
