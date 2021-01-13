@@ -4,6 +4,24 @@ These are the bare minimal configs needed for work.
 
 ## Setup
 
+### Clone repo with aliases
+
+```sh
+git clone --bare https://github.com/torvarun/configs.git $HOME/.cfg
+
+# Keep this in a bashrc or an equivalent file
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+config checkout --track origin work/base
+config checkout -b work/<descriptive-branch-name>
+config config --local status.showUntrackedFiles no
+config add <file-to-backup>
+config commit -m "initial commit"
+config push --set-upstream origin <descriptive-branch-name>
+```
+
+### scripts
+
 ```sh
 chmod +x scripts/autoscript
 ```
