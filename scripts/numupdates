@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# find the number of packages needing updates
-
-count=$(checkupdates | wc -l)
-
-if [ $count -ne 0 ]; then
-    echo $count
-fi
