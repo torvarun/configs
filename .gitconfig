@@ -8,5 +8,3 @@
     ss = stash save
     sp = stash pop
 [user]
-	email = torvarun@gmail.com
-	name = torvarun
