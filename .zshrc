@@ -103,7 +103,6 @@ alias zshrc="vim ~/.zshrc && source ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
-
 # Function to serve the current dir using ruby with CORS enabled
 # Serves at localhost:3000 by default
 function serve {
@@ -116,22 +115,8 @@ function serve {
 PATH=$HOME/scripts:$PATH
 alias ascript="autoscript"
 
-alias bt="bluetoothctl"
-
-alias uwl="ssh cs_uw"
-
 # useful aliases
-alias open="mimeo"
-alias pbcopy="xclip -selection c"
-alias pbpaste="xclip -selection c -o"
-alias ytop="ytop -b"
 alias as="autoscript"
-
-# mounting drives with user permission
-function mountwood {
-    sudo mkdir /mnt/woodstock
-    sudo mount $1 /mnt/woodstock -o umask=000
-}
 
 # Global Variables
 export VISUAL=vim # editor for crontab
