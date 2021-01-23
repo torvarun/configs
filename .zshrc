@@ -124,8 +124,8 @@ alias uwl="ssh cs_uw"
 alias open="mimeo"
 alias pbcopy="xclip -selection c"
 alias pbpaste="xclip -selection c -o"
-alias ytop="ytop -b"
 alias as="autoscript"
+alias btm="btm -l --battery"
 
 # mounting drives with user permission
 function mountwood {
