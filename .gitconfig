@@ -1,10 +1,13 @@
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    au = add -u
     st = status
     bra = branch -a
     brl = branch -l
     c = commit
+    ca = commit --amend
     cm = commit -m
+    p = push
     ss = stash save
     sp = stash pop
 [user]

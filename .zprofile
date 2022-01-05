@@ -6,3 +6,4 @@ PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/mnt/woodstock/android/platform-tools:$PATH"
+export ANDROID_HOME="/mnt/woodstock/android"

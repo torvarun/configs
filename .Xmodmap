@@ -247,3 +247,12 @@ keycode 253 =
 keycode 254 = XF86WWAN NoSymbol XF86WWAN
 keycode 255 = XF86RFKill NoSymbol XF86RFKill
 keycode 464 = function
+! Exchange left Alt and left Win
+! remove mod1 = Alt_L
+! remove mod4 = Super_L
+! add mod1 = Super_L
+! add mod4 = Alt_L
+remove mod4 = Alt_L
+remove mod1 = Super_L
+add mod4 = Super_L
+add mod1 = Alt_L

@@ -98,6 +98,7 @@ bindsym $mod+Shift+space floating toggle
 
 # screenshot
 bindsym $mod+s exec "maim -s | xclip -selection clipboard -t image/png"
+bindsym $mod+Shift+s exec "maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png"
 
 # change focus between tiling / floating windows
 # bindsym $mod+Shift+space focus mode_toggle
