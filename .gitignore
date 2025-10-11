@@ -1,0 +1,49 @@
+# clang
+.cache/
+
+# YCM compdb
+compile_commands.json
+
+# vscode
+.vscode/
+
+.project
+.settings/
+
+.idea/
+
+TAGS
+tags
+
+
+# ============== mac stuff ###########
+# General
+.DS_Store
+__MACOSX/
+.AppleDouble
+.LSOverride
+Icon[
+]
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+
+# ================ specific to configs repo ==========
+.config/karabiner/automatic_backups/

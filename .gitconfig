@@ -1,0 +1,40 @@
+[user]
+	email = vvenka97@ford.com
+	name = Varun Venkataramanan
+[credential]
+	helper = store
+[color]
+	ui = auto
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    s = switch
+    au = add -u
+    st = status -sb
+    bra = branch -a
+    brl = branch -l
+    c = commit
+    ca = commit --amend
+    cm = commit -m
+    cp = cherry-pick
+    p = push
+    ss = stash save
+    sp = stash pop
+    showchanges = show --pretty="" --name-status
+    start = "!f() { git checkout -b topic/IVINDA-\"$1\"; }; f"
+    unstage = remove --staged
+	root = rev-parse --show-toplevel
+[core]
+	excludesfile = /home/vvenka97-local/.gitignore
+[pull]
+	ff = only
+[merge]
+tool = intellij
+[mergetool "intellij"]
+cmd = '/home/vvenka97-local/.local/share/JetBrains/Toolbox/scripts/idea' merge “$LOCAL” “$REMOTE” “$BASE” “$MERGED”
+trustExitCode = true
+[mergetool]
+keepBackup = false
+#[http]
+#	proxy = http://internet.ford.com:83
+#[https]
+#	proxy = http://internet.ford.com:83

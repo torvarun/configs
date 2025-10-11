@@ -1,0 +1,8 @@
+rupa/z
+# sindresorhus/pure
+jackharrisonsherlock/common
+# chrissicool/zsh-bash
+
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-history-substring-search
