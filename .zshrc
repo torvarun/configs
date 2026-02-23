@@ -173,3 +173,6 @@ function frg {
 export RIPGREP_CONFIG_PATH="$HOME/.rg.conf"
 
 alias vedit="open -e"
+export PATH="/opt/homebrew/bin:$PATH"
+
+export PATH=$PATH:/Users/varun/.spicetify
